@@ -27,7 +27,7 @@ class Cartesian {
   void setReal(long double r);
   void setImagine(long double r);
 
-  //bool operator==(const Cartesian &val) const;
+  bool operator==(const Cartesian &val) const;
 
   friend Cartesian pow(const Cartesian &p, u_int32_t n);
 
@@ -55,11 +55,13 @@ private:
   Polar &operator*=(const Polar &val);
   Polar &operator/=(const Polar &val);
 
-  long double getRHO() const;
-  long double getPHI() const;
+  long double getRho() const;
+  long double getPhi() const;
 
   void setRHO(long double r);
   void setPHI(long double p);
+
+  bool operator==(const Polar &val) const;
 
   friend Polar pow(const Polar &x, u_int32_t y);
 
