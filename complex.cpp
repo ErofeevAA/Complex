@@ -59,9 +59,9 @@ void Cartesian::setImagine(long double i) {
   this->imagine = i;
 }
 
-//bool Cartesian::operator==(const Cartesian &val) const {
-//  return fabsl(this->real - val.real) < EPS && fabsl(this->imagine - val.imagine) < EPS;
-//}
+bool Cartesian::operator==(const Cartesian &val) const {
+  return fabsl(this->real - val.real) < EPS && fabsl(this->imagine - val.imagine) < EPS;
+}
 
 Cartesian pow(const Cartesian &p, u_int32_t n) {
   return Cartesian(pow(Polar(p), n));
@@ -89,10 +89,6 @@ Cartesian operator/(const Cartesian &left, const Cartesian &right) {
   long double i = left.imagine * right.real - left.real * right.imagine;
   i /= denominator;
   return Cartesian(r, i);
-}
-
-bool Cartesian::operator==(const Cartesian &val) const {
-  return fabsl(this->real - val.real) < EPS && fabsl(this->imagine - val.imagine) < EPS;
 }
 
 /*bool operator==(const Cartesian &left, const Cartesian &right) {
@@ -145,6 +141,10 @@ void Polar::setRho(long double r) {
   this->rho = r;
 }
 
+bool Polar::operator==(const Polar &val) const {
+  return fabsl(this->rho - val.rho) < EPS && fabsl(this->phi - val.phi) < EPS;
+}
+
 void Polar::setPhi(long double p) {
   this->phi = p;
 }
@@ -171,10 +171,6 @@ Polar operator/(const Polar &left, const Polar &right) {
   long double r = left.rho / right.rho;
   long double p = left.phi - right.phi;
   return Polar(r, p);
-}
-
-bool Polar::operator==(const Polar& _val) const {
-  return Cartesian(*this) == Cartesian(_val);
 }
 
 /*bool operator==(const Polar &left, const Polar &right) {
