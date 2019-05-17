@@ -141,11 +141,11 @@ long double Polar::getPhi() const {
   return this->phi;
 }
 
-void Polar::setRHO(long double r) {
+void Polar::setRho(long double r) {
   this->rho = r;
 }
 
-void Polar::setPHI(long double p) {
+void Polar::setPhi(long double p) {
   this->phi = p;
 }
 

@@ -58,8 +58,8 @@ private:
   long double getRho() const;
   long double getPhi() const;
 
-  void setRHO(long double r);
-  void setPHI(long double p);
+  void setRho(long double r);
+  void setPhi(long double p);
 
   bool operator==(const Polar &val) const;
 

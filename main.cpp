@@ -100,8 +100,8 @@ TEST(PolarTest, getTest) {
 
 TEST(PolarTest, setTest) {
   Polar x;
-  x.setRHO(2);
-  x.setPHI(3);
+  x.setRho(2);
+  x.setPhi(3);
   EXPECT_EQ(x, Polar(2, 3));
 }
 
